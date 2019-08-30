@@ -76,6 +76,12 @@ class ArmisClient(object):
         device_url = 'devices/?id=%s' % device_id
         id_response = (self._get(self._url(device_url))).json()
         return(id_response)
+
+    def unhandled_alerts(self):
+        ''' Returns all unhandled alerts '''
+        handle_url = self._url('search/?aql=in%3Aalerts%20status%3AUnhandled&include_total=true')
+        handle_response = self._get(handle_url).json()
+        return(handle_response)
     
     def resolve_by_id(self, device_id):
         ''' Resolves Armis API given alert id '''

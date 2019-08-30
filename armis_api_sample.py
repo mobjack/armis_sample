@@ -3,8 +3,8 @@ import json
 from armisClient import ArmisClient
 
 
-#cx_hostname = 'HOSTNAME of your instance ie customer_name.armis.net'
-cx_hostname = 'yourinstance_name.armis.net'
+#cx_hostname = 'HOSTNAME of your instance ie xxxxxxxxxx.armis.com'
+cx_hostname = 'xxxxxxxxxx.armis.com'
 #apikey='You can find your API key under settings then click API Management '
 apikey='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 
@@ -21,6 +21,10 @@ def main():
     '''Pull Devices By ID'''
     #device_json = armis_api.get_device_id(device_to_find_id)
     #print(json.dumps(device_json, indent=4))
+
+    ''' Find All Unhandled Alerts '''
+    #open_alerts = armis_api.unhandled_alerts()
+    #print(json.dumps(open_alerts, indent=4))
 
     ''' Resolve an alert '''
     #resolve_details = armis_api.resolve_by_id(resolve_alert)
