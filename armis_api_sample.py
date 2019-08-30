@@ -4,7 +4,7 @@ from armisClient import ArmisClient
 
 
 #cx_hostname = 'HOSTNAME of your instance ie customer_name.armis.net'
-cx_hostname = 'customer_name.armis.net'
+cx_hostname = 'yourinstance_name.armis.net'
 #apikey='You can find your API key under settings then click API Management '
 apikey='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 
