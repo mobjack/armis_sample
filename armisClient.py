@@ -11,9 +11,6 @@ class ArmisClient(object):
         self.apikey = apikey
         self.token = None
 
-    def _utc_convert(self, xtimestamp):
-        pass
-
     def _url(self, *args):
         return os.path.join(self.url_base, *args)
 
@@ -21,14 +18,11 @@ class ArmisClient(object):
         auth_url = self._url('access_token/')
         auth_res = requests.post(auth_url, data = {'secret_key':self.apikey}).json()
         self.access_token = auth_res['data']['access_token']
-        utc_token_timeout = auth_res['data']['expiration_utc']
 
     def _get(self, url):
         if self.token is None:
             self._authenticate()
 
-        print(url)
-        
         get_headers = {'Authorization': self.access_token} 
         get_res = requests.get(url, headers=get_headers)
         if get_res.status_code > 399:
