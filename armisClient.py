@@ -6,8 +6,8 @@ import logging
 from logging.handlers import RotatingFileHandler
 
 class ArmisClient(object):
-    def __init__(self, customer, apikey):
-        self.url_base = 'https://{0}/api/v1'.format(customer)
+    def __init__(self, cx_host, apikey):
+        self.url_base = 'https://{0}/api/v1'.format(cx_host)
         self.apikey = apikey
         self.token = None
 
