@@ -17,7 +17,7 @@ def main():
     armis_api = ArmisClient(CX_HOSTNAME, APIKEY)
 
     #To test your api key
-    #armis_api.auth_test()
+    armis_api.auth_test()
 
     #Pull Devices By ID
     #device_json = armis_api.get_device_id(DEVICE_ID_TO_FIND)

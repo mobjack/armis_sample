@@ -6,7 +6,9 @@ import codecs
 from urllib import parse
 from time import time
 import requests
-from requests.exceptions import ConnectionError, ReadTimeout, ConnectTimeout
+from requests.exceptions import ConnectionError, ReadTimeout, ConnectTimeout # pylint: disable=redefined-builtin
+
+# pylint: disable=invalid-name
 
 class ArmisClient():
     '''Handle access to the API and keep track of the tokens '''
@@ -94,11 +96,12 @@ class ArmisClient():
         self._authenticate()
         print(url)
         file_csv = codecs.open(csv_data, 'r', 'UTF-8')
-        file_data=file_csv.read()
+        file_data=file_csv.read() # pylint: disable=unused-variable
 
         params = {'mimetype':'text/csv'}
         post_headers = {'Authorization': self.access_token}
-        post_res = requests.post(url, headers=post_headers, params=params, files={'mycsv.csv':file_csv}).json()
+        post_res = requests.post(url, headers=post_headers,
+                                 params=params, files={'mycsv.csv':file_csv}).json()
 
         if post_res > 399:
             print("Errors")
