@@ -96,7 +96,7 @@ class ArmisClient():
         self._authenticate()
         print(url)
         file_csv = codecs.open(csv_data, 'r', 'UTF-8')
-        file_data=file_csv.read() # pylint: disable=unused-variable
+        file_data = file_csv.read() # pylint: disable=unused-variable
 
         params = {'mimetype':'text/csv'}
         post_headers = {'Authorization': self.access_token}
