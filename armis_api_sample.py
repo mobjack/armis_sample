@@ -33,8 +33,9 @@ def main():
 
     #Search Anything
     # The query is converted to a url in the class, just copy & paste the AQL
-    #query_anything = armis_api.search_aql('in:devices boundary:ICS', count=10)
-    #query_anything = armis_api.search_aql('in:activity timeFrame:"7 Days" type:"Risk Level Increased"', count=10)
+    #aql_query('in:devices boundary:ICS', count=10)
+    #aql_query = 'in:activity timeFrame:"7 Days" type:"Risk Level Increased"'
+    #query_anything = armis_api.search_aql(aql_query, count=10)
     #print(json.dumps(query_anything, indent=4, sort_keys=True))
 
     #Add device info:
@@ -51,6 +52,6 @@ def main():
     #   "USER"
     send_csv_api = armis_api.send_csv('/Users/parker/Documents/scripts/sa_api/templates/test1.csv')
     print(send_csv_api)
-    
+
 if __name__ == "__main__":
     main()
