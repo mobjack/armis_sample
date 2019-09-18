@@ -50,8 +50,8 @@ def main():
     #   "TAG",
     #   "TYPE",
     #   "USER"
-    send_csv_api = armis_api.send_csv('/Users/parker/Documents/scripts/sa_api/templates/test1.csv')
-    print(send_csv_api)
-
+    #send_csv_api = armis_api.send_csv('<your csv file here')
+    #print(send_csv_api)
+    
 if __name__ == "__main__":
     main()
